@@ -26,7 +26,7 @@ const verifyAuth = async (
   if (isTokenValid) {
     return next()
   }
-  throw new NotAuthenticated({ message: 'Your token is invalid' })
+  throw new NotAuthenticated()
 }
 
 export default verifyAuth

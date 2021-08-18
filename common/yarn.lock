@@ -708,10 +708,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@supercoder.dev/backend-helpers@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@supercoder.dev/backend-helpers/-/backend-helpers-1.1.0.tgz#7029efab46b92a11eee9615c69ca7adc6ad94c82"
-  integrity sha512-+e5+VfubYE/LmxapcNEnySJAeqY7vOFD/XkMKflwu6DNCTxPiCMTDew1QTtC4Mf5jr7O2SkmlBhYlZDWwkd7gA==
+"@supercoder.dev/backend-helpers@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@supercoder.dev/backend-helpers/-/backend-helpers-1.1.1.tgz#be18e60955fd8b4e2c8ea7717427f18c886bac62"
+  integrity sha512-EpQ80CODhGj7pdclqRWX8uC7uKUalAmIIal0zR/aQbjbxQ6nB9Irt4r3Z29KcF3JCSlSoDoJiOZsUK+qpkSCGw==
   dependencies:
     "@types/express" "^4.17.12"
     express "^4.17.1"
