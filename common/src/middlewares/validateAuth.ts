@@ -1,6 +1,6 @@
 import admin from '../services/firebase'
 import { Request, Response, NextFunction } from 'express'
-import NotAuthenticated from '@supercoder.dev/backend-helpers/src/errorsGenerators/NotAuthenticated'
+import NotAuthenticated from '@supercoder.dev/backend-helpers/dist/errorsGenerators/NotAuthenticated'
 
 const getIfTokenIsValid = async (
   token: string | undefined
@@ -14,15 +14,21 @@ const getIfTokenIsValid = async (
   }
 }
 
+const getToken = (authorization?: string): string => {
+  if (!authorization) throw new NotAuthenticated()
+  const match = authorization.match(/Bearer (.+)/)
+  if (!match) throw new NotAuthenticated()
+  // The token group
+  return match[1]
+}
+
 const verifyAuth = async (
   req: Request,
   res: Response,
   next: NextFunction
 ): Promise<void> => {
-  // This may be incorrect because I may have to extract the token from the authorization header
-  const isTokenValid: boolean = await getIfTokenIsValid(
-    req.headers.authorization
-  )
+  const token: string = getToken(req.headers.authorization)
+  const isTokenValid: boolean = await getIfTokenIsValid(token)
   if (isTokenValid) {
     return next()
   }
