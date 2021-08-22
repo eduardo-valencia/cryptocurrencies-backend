@@ -1,21 +1,6 @@
 import FavoriteRepo from "../Favorite";
-import PgContext from "../../test/database";
 
 import Favorite from "@supercoder.dev/cryptocurrencies-common/src/collections/Favorite";
-
-let context: PgContext | null = null;
-
-beforeAll(async () => {
-  context = await PgContext.setUp();
-});
-
-beforeEach(async () => {
-  await context!.deleteTables();
-});
-
-afterAll(async () => {
-  await context!.disconnect();
-});
 
 interface FavoriteTestData {
   favorite: Favorite;
