@@ -12,7 +12,8 @@ interface Keys {
   databasePassword: string
 }
 
-const getCamelCasedKeys = () => convertObjectToCamelCase(process.env)
+const getCamelCasedKeys = (): object =>
+  convertObjectToCamelCase<object>(process.env)
 
 const validateKeyExists =
   (keys: Object) =>
@@ -22,7 +23,7 @@ const validateKeyExists =
     }
   }
 
-const camelCasedKeys = getCamelCasedKeys()
+const camelCasedKeys: object = getCamelCasedKeys()
 
 const validateKeys = () => {
   const requiredKeys: (keyof Keys)[] = [
@@ -32,7 +33,7 @@ const validateKeys = () => {
     'databaseUser',
     'databasePassword',
   ]
-  requiredKeys.map(validateKeyExists(camelCasedKeys))
+  requiredKeys.forEach(validateKeyExists(camelCasedKeys))
 }
 
 validateKeys()

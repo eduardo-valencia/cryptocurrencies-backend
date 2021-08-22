@@ -13,9 +13,9 @@ const addPropertyAsCamelCase =
     }
   }
 
-export const convertObjectToCamelCase = (
+export const convertObjectToCamelCase = <NewObject extends unknown>(
   row: ConvertableObject
-): ConvertableObject => {
+): NewObject => {
   const keys = Object.keys(row)
-  return keys.reduce(addPropertyAsCamelCase(row), {})
+  return keys.reduce(addPropertyAsCamelCase(row), {}) as NewObject
 }
