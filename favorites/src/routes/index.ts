@@ -4,11 +4,12 @@ import { Router } from 'express'
 
 import newRouter from './new'
 import deleteRouter from './delete'
+import findByUserRouter from './findByUser'
 import { route } from './route'
 
 const router = createRouter()
 
-const routers: Router[] = [newRouter, deleteRouter]
+const routers: Router[] = [newRouter, deleteRouter, findByUserRouter]
 
 useRouters(routers, router, route)
 
