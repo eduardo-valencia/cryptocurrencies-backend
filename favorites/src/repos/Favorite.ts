@@ -1,4 +1,4 @@
-import Favorite from '@supercoder.dev/cryptocurrencies-common/src/collections/Favorite'
+import Favorite from '@supercoder.dev/cryptocurrencies-common/dist/collections/Favorite'
 
 import adapter from '../services/pool'
 import { convertObjectToCamelCase } from '../utils/transform'

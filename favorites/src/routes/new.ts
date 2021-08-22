@@ -1,6 +1,6 @@
-import Favorite from '@supercoder.dev/cryptocurrencies-common/src/collections/Favorite'
+import Favorite from '@supercoder.dev/cryptocurrencies-common/dist/collections/Favorite'
 import validateParams from '@supercoder.dev/backend-helpers/dist/middlewares/paramsValidation'
-import validateAuth from '@supercoder.dev/cryptocurrencies-common/src/middlewares/validateAuth'
+import validateAuth from '@supercoder.dev/cryptocurrencies-common/dist/middlewares/validateAuth'
 import { Request, Response } from 'express-serve-static-core'
 import { body } from 'express-validator'
 
