@@ -717,20 +717,20 @@
     express-async-errors "^3.1.1"
     express-validator "^6.12.0"
 
-"@supercoder.dev/backend-helpers@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@supercoder.dev/backend-helpers/-/backend-helpers-1.0.0.tgz#c66b9dcc9436a96a8c7c7a401e27d84e592d357f"
-  integrity sha512-3+Mm6lbNLfFOYrYBS8VhMQ4kICZEAQ/a3fAhK6q+EEmNK0a7bTxfIOfZt9SiG3vNiCjqmoBbXu4WkhJl/jPg3g==
+"@supercoder.dev/backend-helpers@1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@supercoder.dev/backend-helpers/-/backend-helpers-1.1.6.tgz#059debc1fbc7f13e77eb4437887cb3dedbed321b"
+  integrity sha512-BrQZJB3k9QTscrftL0w/0eYUhzklbI43NloIxo3kKtJu930pZd/KhPeXkvD1M9i2s3F/9/HZ05VousjxjlIPNg==
   dependencies:
     "@types/express" "^4.17.12"
     express "^4.17.1"
     express-async-errors "^3.1.1"
     express-validator "^6.12.0"
 
-"@supercoder.dev/cryptocurrencies-common@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@supercoder.dev/cryptocurrencies-common/-/cryptocurrencies-common-1.0.1.tgz#e559d51b62115df454411628505b2877ca5f0bbd"
-  integrity sha512-JvPAP5qBogWhq+nAfWuqfu/7HkTXKrZilBDyl/54KQtILALOM8jAJT+QBe43ACReODN88Svn0/hOYLS2BfGfZQ==
+"@supercoder.dev/cryptocurrencies-common@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@supercoder.dev/cryptocurrencies-common/-/cryptocurrencies-common-1.0.2.tgz#10263d08d58e7021976f00443be2c6d501504528"
+  integrity sha512-Be6CnESfBYRqrYr5Wr8Nvy0fGoEc8xxSt6RhVrGJMaEwUxOhFG5iUjeZlMbscVPYWla553diYSTqJqNrRI7tHg==
   dependencies:
     "@supercoder.dev/backend-helpers" "1.1.2"
     firebase-admin "^9.10.0"
