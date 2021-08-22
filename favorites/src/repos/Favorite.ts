@@ -31,6 +31,16 @@ class FavoriteRepo {
     const [newFavorite] = rows
     return convertObjectToCamelCase<Favorite>(newFavorite)
   }
+
+  static delete = async (id: Favorite['id']): Promise<void> => {
+    await adapter.pool!.query(
+      `
+      DELETE FROM favorites
+      WHERE id = $1;
+      `,
+      [id]
+    )
+  }
 }
 
 export default FavoriteRepo
