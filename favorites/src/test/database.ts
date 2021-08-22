@@ -47,7 +47,7 @@ class PgContext {
       schema: this.role,
       direction: 'up',
       dir: 'migrations',
-      migrationsTable: 'test',
+      migrationsTable: 'migrations',
       count: 1,
       databaseUrl: this.testPoolOptions,
     })

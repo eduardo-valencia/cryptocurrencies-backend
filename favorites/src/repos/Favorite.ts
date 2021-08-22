@@ -5,12 +5,12 @@ import { convertObjectToCamelCase } from '../utils/transform'
 import { convertRowsToCamelCase } from '../utils/transformRows'
 
 class FavoriteRepo {
-  static findByUser = async (user: Favorite['user']): Promise<Favorite[]> => {
+  static findByUser = async (user: Favorite['userId']): Promise<Favorite[]> => {
     const { rows } = await adapter.pool!.query(
       `
       SELECT *
       FROM favorites
-      WHERE user = $1;
+      WHERE user_id = $1;
     `,
       [user]
     )
@@ -18,16 +18,14 @@ class FavoriteRepo {
   }
 
   static add = async (
-    user: Favorite['user'],
+    user: Favorite['userId'],
     currency: Favorite['currency']
   ): Promise<Favorite> => {
     const { rows } = await adapter.pool!.query(
-      `
-      INSERT INTO favorites
-      (user, currency)
+      `INSERT INTO favorites
+      (user_id, currency)
       VALUES ($1, $2)
-      RETURNING *;
-      `,
+      RETURNING *;`,
       [user, currency]
     )
     const [newFavorite] = rows

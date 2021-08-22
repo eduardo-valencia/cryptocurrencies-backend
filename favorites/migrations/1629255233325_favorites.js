@@ -7,7 +7,7 @@ const tableName = 'favorites'
 exports.up = (pgm) => {
   pgm.createTable(tableName, {
     id: 'id',
-    user: {
+    user_id: {
       type: 'varchar(50)',
       notNull: true,
     },
