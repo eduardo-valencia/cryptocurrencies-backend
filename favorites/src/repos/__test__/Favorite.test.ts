@@ -1,24 +1,6 @@
 import FavoriteRepo from '../Favorite'
 
-import Favorite from '@supercoder.dev/cryptocurrencies-common/dist/collections/Favorite'
-
-interface FavoriteTestData {
-  favorite: Favorite
-  expectedFavorite: Omit<Favorite, 'id'>
-}
-
-const addFavorite = async (): Promise<FavoriteTestData> => {
-  const userId: string = 'hello'
-  const currency: string = 'currency'
-  const favorite = await FavoriteRepo.add(userId, currency)
-  return {
-    favorite,
-    expectedFavorite: {
-      userId: userId,
-      currency,
-    },
-  }
-}
+import { addFavorite, expectFavoriteNotToExist } from '../../test/favorites'
 
 describe('find by user', () => {
   it('Should return an empty array if it did not find results', async () => {
@@ -45,7 +27,6 @@ describe('Deleting favorite', () => {
   it('Should remove the favorite', async () => {
     const { favorite } = await addFavorite()
     await FavoriteRepo.delete(favorite.id)
-    const favorites = await FavoriteRepo.findByUser(favorite.userId)
-    expect(favorites).toHaveLength(0)
+    await expectFavoriteNotToExist(favorite)
   })
 })

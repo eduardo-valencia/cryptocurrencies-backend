@@ -1,4 +1,5 @@
 import Favorite from '@supercoder.dev/cryptocurrencies-common/dist/collections/Favorite'
+import { QueryResult } from 'pg'
 
 import adapter from '../services/pool'
 import { convertObjectToCamelCase } from '../utils/transform'
@@ -32,8 +33,8 @@ class FavoriteRepo {
     return convertObjectToCamelCase<Favorite>(newFavorite)
   }
 
-  static delete = async (id: Favorite['id']): Promise<void> => {
-    await adapter.pool!.query(
+  static delete = async (id: Favorite['id']): Promise<QueryResult> => {
+    return adapter.pool!.query(
       `
       DELETE FROM favorites
       WHERE id = $1;
