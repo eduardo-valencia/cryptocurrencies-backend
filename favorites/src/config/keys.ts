@@ -10,6 +10,8 @@ interface Keys {
   databaseName: string
   databaseUser: string
   databasePassword: string
+  port?: number
+  googleApplicationCredentials: string
 }
 
 const getCamelCasedKeys = (): object =>
@@ -32,6 +34,7 @@ const validateKeys = () => {
     'databaseName',
     'databaseUser',
     'databasePassword',
+    'googleApplicationCredentials',
   ]
   requiredKeys.forEach(validateKeyExists(camelCasedKeys))
 }
