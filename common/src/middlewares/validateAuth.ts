@@ -1,6 +1,7 @@
-import admin from '../services/firebase'
 import { Request, Response, NextFunction } from 'express'
 import NotAuthenticated from '@supercoder.dev/backend-helpers/dist/errorsGenerators/NotAuthenticated'
+
+import admin from '../services/firebase'
 
 const getIfTokenIsValid = async (
   token: string | undefined
