@@ -8,11 +8,11 @@ exports.up = (pgm) => {
   pgm.createTable(tableName, {
     id: 'id',
     user: {
-      type: 'integer',
+      type: 'varchar(50)',
       notNull: true,
     },
     currency: {
-      type: 'integer',
+      type: 'varchar(50)',
       notNull: true,
     },
   })
