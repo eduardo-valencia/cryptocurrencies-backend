@@ -1,7 +1,7 @@
 import Item from './Item'
 
 interface Favorite extends Item {
-  user: string
+  userId: string
   currency: string
 }
 
