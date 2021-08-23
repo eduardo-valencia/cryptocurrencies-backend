@@ -1,11 +1,14 @@
 {
   "folders": [
-	{
-		"path": ".."
-	},
-	{
-		"path": "../../supercoder-helpers"
-	}
-],
+    {
+      "path": ".."
+    },
+    {
+      "path": "../../supercoder-helpers"
+    },
+    {
+      "path": "../../ticketing"
+    }
+  ],
   "settings": {}
 }
