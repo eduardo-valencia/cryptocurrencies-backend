@@ -34,7 +34,6 @@ const validateKeys = () => {
     'databaseName',
     'databaseUser',
     'databasePassword',
-    'googleApplicationCredentials',
   ]
   requiredKeys.forEach(validateKeyExists(camelCasedKeys))
 }
