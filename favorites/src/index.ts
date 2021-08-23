@@ -15,7 +15,10 @@ const connectToFirebase = () => {
 const setUp = async (): Promise<void> => {
   connectToFirebase()
   // Connect to database
-  await adapter.connect(poolConfig)
+  await adapter.connect({
+    ...poolConfig,
+    ssl: { rejectUnauthorized: true },
+  })
   const port: number = keys.port || 5000
   app.listen(port, () => console.log(`Listening on ${port}`))
 }
