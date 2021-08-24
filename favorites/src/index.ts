@@ -17,7 +17,7 @@ const setUp = async (): Promise<void> => {
   // Connect to database
   await adapter.connect({
     ...poolConfig,
-    ssl: { rejectUnauthorized: true },
+    ssl: { rejectUnauthorized: false },
   })
   const port: number = keys.port || 5000
   app.listen(port, () => console.log(`Listening on ${port}`))
