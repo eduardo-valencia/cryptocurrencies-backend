@@ -7,7 +7,11 @@ import keys from './config/keys'
 
 const connectToFirebase = () => {
   admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
+    credential: admin.credential.cert({
+      projectId: keys.firebaseProjectId,
+      clientEmail: keys.firebaseClientEmail,
+      privateKey: keys.firebasePrivateKey,
+    }),
     databaseURL: 'https://cryptocurrencies-2759e.firebaseio.com',
   })
 }
