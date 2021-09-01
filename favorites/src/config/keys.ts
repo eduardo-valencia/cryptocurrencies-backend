@@ -13,16 +13,9 @@ interface Keys {
   port?: number
   googleApplicationCredentials: string
   publicUrl: string
-  // firebaseType: string
   firebaseProjectId: string
-  // firebasePrivateKeyId: string
   firebasePrivateKey: string
   firebaseClientEmail: string
-  // firebaseClientId: string
-  // firebaseAuthUri: string
-  // firebaseTokenUri: string
-  // firebaseAuthProvider: string
-  // firebaseClient: string
 }
 
 const getCamelCasedKeys = (): object =>
@@ -46,16 +39,9 @@ const validateKeys = () => {
     'databaseUser',
     'databasePassword',
     'publicUrl',
-    // 'firebaseType',
     'firebaseProjectId',
-    // 'firebasePrivateKeyId',
     'firebasePrivateKey',
     'firebaseClientEmail',
-    // 'firebaseClientId',
-    // 'firebaseAuthUri',
-    // 'firebaseTokenUri',
-    // 'firebaseAuthProvider',
-    // 'firebaseClient',
   ]
   requiredKeys.forEach(validateKeyExists(camelCasedKeys))
 }
