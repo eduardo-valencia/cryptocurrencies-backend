@@ -1,1 +1,1 @@
-export const route = '/api/'
+export const route = '/api/favorites/'
