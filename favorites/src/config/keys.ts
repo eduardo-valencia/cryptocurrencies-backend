@@ -5,17 +5,13 @@ import { convertObjectToCamelCase } from '../utils/transform'
 dotenv.config()
 
 interface Keys {
-  databaseHost: string
-  databasePort: number
-  databaseName: string
-  databaseUser: string
-  databasePassword: string
   port?: number
   googleApplicationCredentials: string
   publicUrl: string
   firebaseProjectId: string
   firebasePrivateKey: string
   firebaseClientEmail: string
+  databaseConnectionString: string
 }
 
 const getCamelCasedKeys = (): object =>
@@ -33,11 +29,7 @@ const camelCasedKeys: object = getCamelCasedKeys()
 
 const validateKeys = () => {
   const requiredKeys: (keyof Keys)[] = [
-    'databaseHost',
-    'databasePort',
-    'databaseName',
-    'databaseUser',
-    'databasePassword',
+    'databaseConnectionString',
     'publicUrl',
     'firebaseProjectId',
     'firebasePrivateKey',
