@@ -11,7 +11,7 @@ interface Keys {
   firebaseProjectId: string
   firebasePrivateKey: string
   firebaseClientEmail: string
-  databaseConnectionString: string
+  databaseUrl: string
 }
 
 const getCamelCasedKeys = (): object =>
@@ -29,7 +29,7 @@ const camelCasedKeys: object = getCamelCasedKeys()
 
 const validateKeys = () => {
   const requiredKeys: (keyof Keys)[] = [
-    'databaseConnectionString',
+    'databaseUrl',
     'publicUrl',
     'firebaseProjectId',
     'firebasePrivateKey',
