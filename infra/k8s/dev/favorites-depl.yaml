@@ -31,11 +31,6 @@ spec:
               secretKeyRef:
                 name: firebase-private-key
                 key: FIREBASE_PRIVATE_KEY
-          - name: FIREBASE_PROJECT_ID
-            valueFrom:
-              secretKeyRef:
-                name: firebase-project-id
-                key: FIREBASE_PROJECT_ID
           - name: FIREBASE_CLIENT_EMAIL
             valueFrom:
               secretKeyRef:
