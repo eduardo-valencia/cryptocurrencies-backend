@@ -4,12 +4,12 @@ deploy:
   kubectl:
     manifests:
       - ./infra/k8s/common/*
-      - ./infra/k8s/dev/*
+      - ./infra/k8s/prod/*
 build:
-  local:
-    push: false
+  googleCloudBuild:
+    projectId: supercoder-cryptocurrencies
   artifacts:
-    - image: alex448800/favorites
+    - image: us.gcr.io/supercoder-cryptocurrencies/favorites
       context: favorites
       docker:
         dockerfile: Dockerfile

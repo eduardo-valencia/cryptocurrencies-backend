@@ -11,41 +11,41 @@ spec:
     metadata:
       labels:
         app: favorites
-  spec:
-    containers:
-      - name: favorites
-        image: us.gcr.io/supercoder-cryptocurrencies/favorites
-        env:
-          - name: PUBLIC_URL
-            valueFrom:
-              secretKeyRef:
-                name: public-url
-                key: PUBLIC_URL
-          - name: FIREBASE_PROJECT_ID
-            valueFrom:
-              secretKeyRef:
-                name: firebase-project-id
-                key: FIREBASE_PROJECT_ID
-          - name: FIREBASE_PRIVATE_KEY
-            valueFrom:
-              secretKeyRef:
-                name: firebase-private-key
-                key: FIREBASE_PRIVATE_KEY
-          - name: FIREBASE_PROJECT_ID
-            valueFrom:
-              secretKeyRef:
-                name: firebase-project-id
-                key: FIREBASE_PROJECT_ID
-          - name: FIREBASE_CLIENT_EMAIL
-            valueFrom:
-              secretKeyRef:
-                name: firebase-client-email
-                key: FIREBASE_CLIENT_EMAIL
-          - name: DATABASE_URL
-            valueFrom:
-              secretKeyRef:
-                name: database-url
-                key: DATABASE_URL
+    spec:
+      containers:
+        - name: favorites
+          image: us.gcr.io/supercoder-cryptocurrencies/favorites
+          env:
+            - name: PUBLIC_URL
+              valueFrom:
+                secretKeyRef:
+                  name: public-url
+                  key: PUBLIC_URL
+            - name: FIREBASE_PROJECT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: firebase-project-id
+                  key: FIREBASE_PROJECT_ID
+            - name: FIREBASE_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: firebase-private-key
+                  key: FIREBASE_PRIVATE_KEY
+            - name: FIREBASE_PROJECT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: firebase-project-id
+                  key: FIREBASE_PROJECT_ID
+            - name: FIREBASE_CLIENT_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: firebase-client-email
+                  key: FIREBASE_CLIENT_EMAIL
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: database-url
+                  key: DATABASE_URL
 ---
 apiVersion: v1
 kind: Service
