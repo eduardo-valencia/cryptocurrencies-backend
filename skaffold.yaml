@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/dev/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: alex448800/favorites
+      context: favorites
+      docker:
+        dockerfile: Docker
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
