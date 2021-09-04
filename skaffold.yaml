@@ -11,7 +11,7 @@ build:
     - image: alex448800/favorites
       context: favorites
       docker:
-        dockerfile: Docker
+        dockerfile: Dockerfile
       sync:
         manual:
           - src: 'src/**/*.ts'
