@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: favorites-postgresql-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: favorites-postgresql
+  template:
+    metadata:
+      labels:
+        app: favorites-postgresql
+    spec:
+      containers:
+        - name: favorites-postgresql
+          image: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-password
+                  key: POSTGRES_PASSWORD
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: favorites-postgresql-srv
+spec:
+  selector:
+    app: favorites-postgresql
+  ports:
+    - name: database
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
