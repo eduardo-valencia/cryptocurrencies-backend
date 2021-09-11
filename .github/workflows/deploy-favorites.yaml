@@ -1,44 +1,25 @@
-# Config for favorites service
-# Based on https://github.com/google-github-actions/setup-gcloud/blob/master/example-workflows/gke/.github/workflows/gke.yml
-
 name: Deploy Favorites
 
 on:
   push:
     branches:
-      - master
-
-env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: cryptocurrencies
-  GKE_ZONE: us-west1-b
-  DEPLOYMENT_NAME: favorites-depl
+      - main
 
 jobs:
-  setup-build-publish-deploy:
-    name: Setup, Build, Publish, and Deploy
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout deployment action
         uses: actions/checkout@v2
-
-      # Setup gcloud CLI
-      - uses: google-github-actions/setup-gcloud@master
         with:
-          version: '290.0.1'
-          service_account_key: ${{ secrets.GKE_SA_KEY }}
-          project_id: ${{ secrets.GKE_PROJECT }}
-          export_default_credentials: true
-
-      # Configure Docker to use the gcloud command-line tool as a credential
-      # helper for authentication
-      - run: |-
-          gcloud --quiet auth configure-docker
-      # Get the GKE credentials so we can deploy to the cluster
-      - run: |-
-          gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-      - name: Skaffold Github Action
-        uses: hiberbee/github-action-skaffold@1.6.0
+          repository: eduardo-valencia/supercoder-projects
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          path: ./.github/actions/supercoder-projects
+      - name: Deploy
+        uses: ./.github/actions/supercoder-projects/deploy
         with:
-          command: run
+          gke_project: ${{ secrets.GKE_PROJECT }}
+          gke_sa_key: ${{ secrets.GKE_SA_KEY }}
+          personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}

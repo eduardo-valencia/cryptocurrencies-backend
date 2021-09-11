@@ -3,17 +3,13 @@ kind: Config
 deploy:
   kubectl:
     manifests:
-      - ./infra/k8s/common/*
-      - ./infra/k8s/prod/*
+      - ./.github/actions/supercoder-projects/infra/k8s/prod/*
+      - ./.github/actions/supercoder-projects/infra/k8s/common/*
 build:
   googleCloudBuild:
-    projectId: supercoder-cryptocurrencies
+    projectId: supercoder-dev
   artifacts:
-    - image: us.gcr.io/supercoder-cryptocurrencies/favorites
+    - image: us.gcr.io/supercoder-dev/favorites
       context: favorites
       docker:
         dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: 'src/**/*.ts'
-            dest: .
