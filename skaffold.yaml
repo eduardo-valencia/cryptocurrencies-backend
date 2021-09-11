@@ -1,6 +1,7 @@
 apiVersion: skaffold/v2alpha3
 kind: Config
 deploy:
+  statusCheckDeadlineSeconds: 300
   kubectl:
     manifests:
       - ./.github/actions/supercoder-projects/infra/k8s/prod/*
