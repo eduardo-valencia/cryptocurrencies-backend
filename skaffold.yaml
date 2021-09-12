@@ -4,8 +4,8 @@ deploy:
   statusCheckDeadlineSeconds: 300
   kubectl:
     manifests:
-      - ./.github/actions/supercoder-projects/infra/k8s/prod/*
-      - ./.github/actions/supercoder-projects/infra/k8s/common/*
+      - ./infra/k8s/common/*
+      - ./infra/k8s/prod/*
 build:
   googleCloudBuild:
     projectId: supercoder-dev
