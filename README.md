@@ -2,7 +2,7 @@
 
 This project is a cryptocurrencies application that helps users view cryptocurrency prices and statistics. You can view the website using the link below:
 
-https://supercoder.dev
+https://crypto.supercoder.dev/
 
 ## Architecture
 
@@ -13,6 +13,6 @@ This application is divided into the following microservices:
 
 Additionally, this repository stores `common`, which is a package that contains all related information between services.
 
-## Guides
+## Credits
 
-The following are the development guides for each microservice:
+Engineered by Eduardo Valencia (https://supercoder.dev).
