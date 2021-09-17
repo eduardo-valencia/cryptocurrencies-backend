@@ -19,27 +19,27 @@ spec:
             - name: PUBLIC_URL
               valueFrom:
                 secretKeyRef:
-                  name: public-url
+                  name: favorites-depl
                   key: PUBLIC_URL
             - name: FIREBASE_PROJECT_ID
               valueFrom:
                 secretKeyRef:
-                  name: firebase-project-id
+                  name: favorites-depl
                   key: FIREBASE_PROJECT_ID
             - name: FIREBASE_PRIVATE_KEY
               valueFrom:
                 secretKeyRef:
-                  name: firebase-private-key
+                  name: favorites-depl
                   key: FIREBASE_PRIVATE_KEY
             - name: FIREBASE_CLIENT_EMAIL
               valueFrom:
                 secretKeyRef:
-                  name: firebase-client-email
+                  name: favorites-depl
                   key: FIREBASE_CLIENT_EMAIL
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: database-url
+                  name: favorites-depl
                   key: DATABASE_URL
 ---
 apiVersion: v1

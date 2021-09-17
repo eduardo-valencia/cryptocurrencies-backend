@@ -13,13 +13,16 @@ The favorites microservice allows users to favorite cryptocurrencies.
 
 You will need a Firebase Admin SDK service account for authentication. To get one, create a new Firebase project at https://firebase.google.com. Then, go to Project settings > Service accounts and click "Generate new private key." All environment variables with "FIREBASE" refer to that service account.
 
-Use kubectl to create a secret with the following literal values:
+Use kubectl to create a generic secret named `favorites-postgresql-depl` with the following literal values:
+
+- `POSTGRES_PASSWORD`: the PostgreSQL password.
+
+Then, create a generic secret named `favorites-depl` with the following literal values:
 
 - `PUBLIC_URL`: The homepage's URL. Used for Cross Origin Resource Sharing (CORS)
 - `FIREBASE_PROJECT_ID`
 - `FIREBASE_PRIVATE_KEY`
 - `FIREBASE_CLIENT_EMAIL`
-- `POSTGRES_PASSWORD`: the PostgreSQL password for the "favorites-postgresql-depl" deployment.
 - `DATABASE_URL`: The PostgreSQL database URL. When running the app using Skaffold, the URL is `postgres://postgres:<POSTGRES_PASSWORD>@localhost:5432/postgres`. Replace `<POSTGRES_PASSWORD>` with the the value of the secret named `POSTGRES_PASSWORD`.
 
 ## Development Configuration
