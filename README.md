@@ -19,7 +19,7 @@ Each microservice has a folder. Additionally, this repository stores `common`, w
 This application uses Docker, Kubectl, and Skaffold to run the microservices. The following are the installation instructions for each of these:
 
 - [Docker](https://www.docker.com/get-started)
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/): This application was last tested with the client and server version v1.28.2.
 - [Skaffold](https://skaffold.dev/docs/install/)
 
 Additionally, this application uses Ingress for distributing traffic between services. Read Ingress's [installation instructions](https://kubernetes.github.io/ingress-nginx/deploy/). If you installed Docker Desktop, make sure to follow the article's instructions for it.
