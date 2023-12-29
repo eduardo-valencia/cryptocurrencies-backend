@@ -15,7 +15,7 @@ const routers: Router[] = [newRouter, deleteRouter, findByUserRouter]
 
 useRouters(routers, router, route)
 
-router.use('/api', cryptocurrenciesRouter)
+router.use('/api/crypto', cryptocurrenciesRouter)
 router.use(healthCheckRouter)
 
 export default router
