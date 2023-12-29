@@ -1,34 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: favorites-postgresql-depl
+  name: cryptocurrencies-postgresql-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: favorites-postgresql
+      app: cryptocurrencies-postgresql
   template:
     metadata:
       labels:
-        app: favorites-postgresql
+        app: cryptocurrencies-postgresql
     spec:
       containers:
-        - name: favorites-postgresql
+        - name: cryptocurrencies-postgresql
           image: postgres
           env:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: favorites-postgresql-depl
+                  name: cryptocurrencies-postgresql-depl
                   key: POSTGRES_PASSWORD
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: favorites-postgresql-srv
+  name: cryptocurrencies-postgresql-srv
 spec:
   selector:
-    app: favorites-postgresql
+    app: cryptocurrencies-postgresql
   ports:
     - name: database
       protocol: TCP

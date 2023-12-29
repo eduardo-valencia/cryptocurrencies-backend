@@ -1,4 +1,4 @@
-name: Deploy Favorites
+name: Deploy Cryptocurrencies
 
 on:
   push:

@@ -8,7 +8,7 @@ https://crypto.supercoder.dev/
 
 This application is divided into the following microservices:
 
-- Favorites: allows users to favorite cryptocurrencies
+- Cryptocurrencies: allows users to favorite cryptocurrencies
 
 Each microservice has a folder. Additionally, this repository stores `common`, which is a package that contains all related information between services.
 

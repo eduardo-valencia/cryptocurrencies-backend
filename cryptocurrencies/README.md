@@ -1,10 +1,10 @@
-# Favorites Microservice
+# Cryptocurrencies Microservice
 
-The favorites microservice allows users to favorite cryptocurrencies.
+The "Cryptocurrencies" microservice allows users to query information about cryptocurrencies and favorite them.
 
 ## Technologies
 
-- PostgresQL
+- PostgreSQL
 - Node & Express
 
 ## Development / Deployment Instructions
@@ -27,11 +27,11 @@ yarn start:watch
 
 You will need a Firebase Admin SDK service account for authentication. To get one, create a new Firebase project at https://firebase.google.com. Then, go to Project settings > Service accounts and click "Generate new private key." All environment variables with "FIREBASE" refer to that service account.
 
-Use kubectl to create a generic secret named `favorites-postgresql-depl` with the following literal values:
+Use kubectl to create a generic secret named `cryptocurrencies-postgresql-depl` with the following literal values:
 
 - `POSTGRES_PASSWORD`: the PostgreSQL password.
 
-Then, create a generic secret named `favorites-depl` with the following literal values:
+Then, create a generic secret named `cryptocurrencies-depl` with the following literal values:
 
 - `PUBLIC_URL`: The homepage's URL. Used for Cross Origin Resource Sharing (CORS)
 - `FIREBASE_PROJECT_ID`

@@ -10,7 +10,7 @@ spec:
     - host: crypto.test-server.cloud
       http:
         paths:
-          - path: /api/favorites/?(.*)
+          - path: /api/cryptocurrencies/?(.*)
             backend:
-              serviceName: favorites-srv
+              serviceName: cryptocurrencies-srv
               servicePort: 5000

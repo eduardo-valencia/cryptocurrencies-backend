@@ -10,7 +10,7 @@ build:
   googleCloudBuild:
     projectId: supercoder-dev
   artifacts:
-    - image: us.gcr.io/supercoder-dev/favorites
-      context: favorites
+    - image: us.gcr.io/supercoder-dev/cryptocurrencies
+      context: cryptocurrencies
       docker:
         dockerfile: Dockerfile

@@ -1,56 +1,56 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: favorites-depl
+  name: cryptocurrencies-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: favorites
+      app: cryptocurrencies
   template:
     metadata:
       labels:
-        app: favorites
+        app: cryptocurrencies
     spec:
       containers:
-        - name: favorites
-          image: us.gcr.io/supercoder-dev/favorites
+        - name: cryptocurrencies
+          image: us.gcr.io/supercoder-dev/cryptocurrencies
           env:
             - name: PUBLIC_URL
               valueFrom:
                 secretKeyRef:
-                  name: favorites
+                  name: cryptocurrencies
                   key: PUBLIC_URL
             - name: FIREBASE_PROJECT_ID
               valueFrom:
                 secretKeyRef:
-                  name: favorites
+                  name: cryptocurrencies
                   key: FIREBASE_PROJECT_ID
             - name: FIREBASE_PRIVATE_KEY
               valueFrom:
                 secretKeyRef:
-                  name: favorites
+                  name: cryptocurrencies
                   key: FIREBASE_PRIVATE_KEY
             - name: FIREBASE_CLIENT_EMAIL
               valueFrom:
                 secretKeyRef:
-                  name: favorites
+                  name: cryptocurrencies
                   key: FIREBASE_CLIENT_EMAIL
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: favorites
+                  name: cryptocurrencies
                   key: DATABASE_URL
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: favorites-srv
+  name: cryptocurrencies-srv
 spec:
   selector:
-    app: favorites
+    app: cryptocurrencies
   ports:
-    - name: favorites
+    - name: cryptocurrencies
       protocol: TCP
       port: 5001
       targetPort: 5000
