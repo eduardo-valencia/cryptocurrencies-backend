@@ -1,15 +1,15 @@
-import PgContext from "./database";
+import PgContext from './database'
 
-let context: PgContext | null = null;
+let context: PgContext | null = null
 
 beforeAll(async () => {
-  context = await PgContext.setUp();
-});
+  context = await PgContext.setUp()
+})
 
 beforeEach(async () => {
-  await context!.deleteTables();
-});
+  await context!.deleteTables()
+})
 
 afterAll(async () => {
-  await context!.disconnect();
-});
+  await context!.disconnect()
+})
