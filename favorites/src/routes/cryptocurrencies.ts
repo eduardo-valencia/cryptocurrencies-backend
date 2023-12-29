@@ -6,7 +6,6 @@ import keys from '../config/keys'
 export const cryptocurrenciesRouter: Router = createRouter()
 
 const fetchFromCoinGecko = (req: Request): Promise<AxiosResponse> => {
-  console.log('req.path', req.path)
   return axios.get(req.path, {
     baseURL: 'https://api.coingecko.com/api/v3',
     params: req.query,
