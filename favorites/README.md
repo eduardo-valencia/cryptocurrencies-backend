@@ -17,7 +17,7 @@ First, start your Postgres database. If you already have Postgres installed, you
 sudo service postgresql start
 ```
 
-Second, please create a `.env.development` file with your environment variables. Read below to learn which environment variables you need. Finally, start the server in development mode:
+Second, please create a `.env` file with your environment variables. Read below to learn which environment variables you need. Finally, start the server in development mode:
 
 ```bash
 yarn start:watch
