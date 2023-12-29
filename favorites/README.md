@@ -52,3 +52,45 @@ This application is configured to use `crypto.test-server.cloud` as the developm
 This means that `crypto.test-server.cloud` will point to 127.0.0.1 (also known as localhost). Using administrator privileges, save the file. You should now be able to access http://crypto.test-server.cloud in your browser.
 
 Accessing the domain will send you a scary certificate security warning because it does not have a valid certificate. Since you are running the application locally, you do not have a valid HTTPS certificate. To ignore the warning in Google Chrome, type "thisisunsafe" in Google Chrome. See https://stackoverflow.com/questions/35274659/when-you-use-badidea-or-thisisunsafe-to-bypass-a-chrome-certificate-hsts-err/35275060#35275060 for more information.
+
+## Commands
+
+### Run the Tests
+
+This command requires running the migrations first.
+
+```bash
+yarn test
+```
+
+### Start the Server (Production)
+
+This command runs the migrations and starts the server in production mode. It requires building the application first.
+
+```bash
+yarn start
+```
+
+### Start the Server (Development Mode)
+
+This command starts the server in watch/development mode.
+
+```bash
+yarn start:watch
+```
+
+### Migrate
+
+This command is an alias for the `node-pg-migrate` package's binary. Run the command with `--help` for more information.
+
+```bash
+yarn migrate
+```
+
+### Build
+
+This command builds the application.
+
+```bash
+yarn build
+```
