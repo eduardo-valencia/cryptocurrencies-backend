@@ -30,7 +30,7 @@ This project also uses Firebase for authentication, so you will need a Firebase 
 
 ### App-Specific Instructions
 
-Before starting the application, please read each microservice's `README.md` file for any additional pre-requisites.
+Before starting the application, please read each microservice's `README.md` file for any additional prerequisites.
 
 ### Starting The App
 
