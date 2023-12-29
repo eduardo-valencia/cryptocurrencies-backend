@@ -22,7 +22,7 @@ This application uses Docker, Kubectl, and Skaffold to run the microservices. Th
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [Skaffold](https://skaffold.dev/docs/install/)
 
-Additionally, this application uses Ingress for distributing traffic between services. Read Ingress's [installation instructions](https://kubernetes.github.io/ingress-nginx/deploy/).
+Additionally, this application uses Ingress for distributing traffic between services. Read Ingress's [installation instructions](https://kubernetes.github.io/ingress-nginx/deploy/). If you installed Docker Desktop, make sure to follow the article's instructions for it.
 
 ### Firebase
 
