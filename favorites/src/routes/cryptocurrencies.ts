@@ -14,6 +14,11 @@ const fetchFromCoinGecko = (req: Request): Promise<AxiosResponse> => {
   })
 }
 
+const handleError = (error: unknown, res: Response): void => {
+  console.error(error)
+  res.status(500).send('Sorry, there was a problem. Please try again later.')
+}
+
 cryptocurrenciesRouter.get(
   '/*',
   async (req: Request, res: Response): Promise<void> => {
@@ -21,10 +26,7 @@ cryptocurrenciesRouter.get(
       const response: AxiosResponse = await fetchFromCoinGecko(req)
       res.send(response.data)
     } catch (error: unknown) {
-      console.error(error)
-      res
-        .status(500)
-        .send('Sorry, there was a problem. Please try again later.')
+      handleError(error, res)
     }
   }
 )
