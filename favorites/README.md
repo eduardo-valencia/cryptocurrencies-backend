@@ -9,7 +9,21 @@ The favorites microservice allows users to favorite cryptocurrencies.
 
 ## Development / Deployment Instructions
 
-### Pre-Requisites
+### Running Locally
+
+First, start your Postgres database. If you already have Postgres installed, you can run the following command on Ubuntu to start the database.
+
+```bash
+sudo service postgresql start
+```
+
+Second, please create a `.env.development` file with your environment variables. Read below to learn which environment variables you need. Finally, start the server in development mode:
+
+```bash
+yarn start:watch
+```
+
+### Pre-Requisites for Kubernetes
 
 You will need a Firebase Admin SDK service account for authentication. To get one, create a new Firebase project at https://firebase.google.com. Then, go to Project settings > Service accounts and click "Generate new private key." All environment variables with "FIREBASE" refer to that service account.
 
@@ -25,7 +39,7 @@ Then, create a generic secret named `favorites-depl` with the following literal 
 - `FIREBASE_CLIENT_EMAIL`
 - `DATABASE_URL`: The PostgreSQL database URL. When running the app using Skaffold, the URL is `postgres://postgres:<POSTGRES_PASSWORD>@localhost:5432/postgres`. Replace `<POSTGRES_PASSWORD>` with the the value of the secret named `POSTGRES_PASSWORD`.
 
-## Development Configuration
+## Development Configuration for Kubernetes
 
 Normally, you would expect to load the application by visiting http://localhost. However, if you are running this application with Skaffold, then you will be using Ingress for distributing traffic between services. Ingress lets you set a specific domain, such as `example.com`, instead of `localhost` to navigate to the application.
 
