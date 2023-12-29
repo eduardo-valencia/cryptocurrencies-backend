@@ -12,6 +12,7 @@ interface Keys {
   firebasePrivateKey: string
   firebaseClientEmail: string
   databaseUrl: string
+  coinGeckoApiKey: string
 }
 
 const getCamelCasedKeys = (): object =>
@@ -34,6 +35,7 @@ const validateKeys = () => {
     'firebaseProjectId',
     'firebasePrivateKey',
     'firebaseClientEmail',
+    'coinGeckoApiKey',
   ]
   requiredKeys.forEach(validateKeyExists(camelCasedKeys))
 }

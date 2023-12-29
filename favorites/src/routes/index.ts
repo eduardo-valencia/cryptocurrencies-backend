@@ -7,6 +7,7 @@ import deleteRouter from './favorites/delete'
 import findByUserRouter from './favorites/findByUser'
 import healthCheckRouter from './healthCheck'
 import { route } from './favorites/route'
+import { cryptocurrenciesRouter } from './cryptocurrencies'
 
 const router = createRouter()
 
@@ -14,6 +15,7 @@ const routers: Router[] = [newRouter, deleteRouter, findByUserRouter]
 
 useRouters(routers, router, route)
 
+router.use('/api', cryptocurrenciesRouter)
 router.use(healthCheckRouter)
 
 export default router
