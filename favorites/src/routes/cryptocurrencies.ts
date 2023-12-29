@@ -19,14 +19,32 @@ const handleError = (error: unknown, res: Response): void => {
   res.status(500).send('Sorry, there was a problem. Please try again later.')
 }
 
-cryptocurrenciesRouter.get(
-  '/*',
-  async (req: Request, res: Response): Promise<void> => {
-    try {
-      const response: AxiosResponse = await fetchFromCoinGecko(req)
-      res.send(response.data)
-    } catch (error: unknown) {
-      handleError(error, res)
-    }
+const handleRequest = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const response: AxiosResponse = await fetchFromCoinGecko(req)
+    res.send(response.data)
+  } catch (error: unknown) {
+    handleError(error, res)
   }
-)
+}
+
+const createRoute = (path: string): void => {
+  cryptocurrenciesRouter.get(path, handleRequest)
+}
+
+/**
+ * We create a route for each path we want to proxy to CoinGecko instead of
+ * accepting a wildcard. This prevents mailicious requests from being made to
+ * CoinGecko using our API token.
+ */
+const createRoutes = (): void => {
+  const paths: string[] = [
+    '/coins/markets',
+    '/coins/:id',
+    '/coins/:id/market_chart',
+    '/search/trending',
+  ]
+  paths.forEach(createRoute)
+}
+
+createRoutes()
