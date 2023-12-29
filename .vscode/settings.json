@@ -3,5 +3,6 @@
     "activityBar.background": "#3E2050",
     "titleBar.activeBackground": "#572D70",
     "titleBar.activeForeground": "#FCFAFD"
-  }
+  },
+  "cSpell.words": ["Skaffold"]
 }

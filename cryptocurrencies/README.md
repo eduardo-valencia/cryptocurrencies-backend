@@ -29,7 +29,7 @@ You will need a Firebase Admin SDK service account for authentication. To get on
 
 Use kubectl to create a generic secret named `cryptocurrencies-postgresql-depl` with the following literal values:
 
-- `POSTGRES_PASSWORD`: the PostgreSQL password.
+- `POSTGRES_PASSWORD`: the PostgreSQL password. In development, this is `postgres`.
 
 The following is an example:
 
@@ -44,16 +44,18 @@ Then, create a generic secret named `cryptocurrencies-depl` with the following l
 - `FIREBASE_PRIVATE_KEY`
 - `FIREBASE_CLIENT_EMAIL`
 - `DATABASE_URL`: The PostgreSQL database URL. When running the app using Skaffold, the URL is `postgres://postgres:<POSTGRES_PASSWORD>@cryptocurrencies-postgresql-srv.default.svc.cluster.local:5432/postgres`. Replace `<POSTGRES_PASSWORD>` with the value of the secret named `POSTGRES_PASSWORD`.
+- `COIN_GECKO_API_KEY`: Visit [CoinGecko](https://www.coingecko.com/en/api) to get a demo API key.
 
 The following is an example. Please note that you must fill in the placeholders.
 
 ```bash
 kubectl create secret generic cryptocurrencies-depl \
-  --from-literal=PUBLIC_URL=localhost:3001 \
+  --from-literal=PUBLIC_URL=localhost:3002 \
   --from-literal=FIREBASE_PROJECT_ID=xxx \
   --from-literal=FIREBASE_PRIVATE_KEY=xxx \
   --from-literal=FIREBASE_CLIENT_EMAIL=xxx \
-  --from-literal=DATABASE_URL=xxx
+  --from-literal=DATABASE_URL=xxx \
+  --from-literal=COIN_GECKO_API_KEY=xxx
 ```
 
 ## Development Configuration for Kubernetes
