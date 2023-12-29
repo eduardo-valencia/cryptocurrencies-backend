@@ -31,13 +31,30 @@ Use kubectl to create a generic secret named `cryptocurrencies-postgresql-depl` 
 
 - `POSTGRES_PASSWORD`: the PostgreSQL password.
 
+The following is an example:
+
+```bash
+kubectl create secret generic cryptocurrencies-postgresql-depl  --from-literal=POSTGRES_PASSWORD=postgres
+```
+
 Then, create a generic secret named `cryptocurrencies-depl` with the following literal values:
 
-- `PUBLIC_URL`: The homepage's URL. Used for Cross Origin Resource Sharing (CORS)
+- `PUBLIC_URL`: The homepage's URL. Used for Cross-Origin Resource Sharing (CORS)
 - `FIREBASE_PROJECT_ID`
 - `FIREBASE_PRIVATE_KEY`
 - `FIREBASE_CLIENT_EMAIL`
-- `DATABASE_URL`: The PostgreSQL database URL. When running the app using Skaffold, the URL is `postgres://postgres:<POSTGRES_PASSWORD>@localhost:5432/postgres`. Replace `<POSTGRES_PASSWORD>` with the the value of the secret named `POSTGRES_PASSWORD`.
+- `DATABASE_URL`: The PostgreSQL database URL. When running the app using Skaffold, the URL is `postgres://postgres:<POSTGRES_PASSWORD>@localhost:5432/postgres`. Replace `<POSTGRES_PASSWORD>` with the value of the secret named `POSTGRES_PASSWORD`.
+
+The following is an example. Please note that you must fill in the placeholders.
+
+```bash
+kubectl create secret generic cryptocurrencies-depl \
+  --from-literal=PUBLIC_URL=localhost:3001 \
+  --from-literal=FIREBASE_PROJECT_ID=xxx \
+  --from-literal=FIREBASE_PRIVATE_KEY=xxx \
+  --from-literal=FIREBASE_CLIENT_EMAIL=xxx \
+  --from-literal=DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres
+```
 
 ## Development Configuration for Kubernetes
 
