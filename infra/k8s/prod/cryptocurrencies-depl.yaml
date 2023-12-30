@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cryptocurrencies
-          image: us.gcr.io/supercoder-dev/cryptocurrencies
+          image: us.gcr.io/supercoder-cryptocurrencies/cryptocurrencies
           env:
             - name: PUBLIC_URL
               valueFrom:
@@ -44,7 +44,7 @@ spec:
             - name: COIN_GECKO_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: cryptocurrencies-depl
+                  name: cryptocurrencies
                   key: COIN_GECKO_API_KEY
 ---
 apiVersion: v1
