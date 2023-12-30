@@ -1,12 +1,12 @@
-import { createRouter } from '../utils/router'
 import { useRouters } from '@supercoder.dev/backend-helpers/dist/utils/routers'
 import { Router } from 'express'
 
+import { createRouter } from '../utils/router'
 import newRouter from './favorites/new'
 import deleteRouter from './favorites/delete'
 import findByUserRouter from './favorites/findByUser'
-import healthCheckRouter from './healthCheck'
 import { favoritesPath } from './favorites/route'
+import healthCheckRouter from './healthCheck'
 import { cryptocurrenciesRouter } from './cryptocurrencies'
 
 const mainRouter: Router = createRouter()
