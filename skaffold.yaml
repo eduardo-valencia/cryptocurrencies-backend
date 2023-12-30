@@ -8,9 +8,9 @@ deploy:
       - ./infra/k8s/prod/*
 build:
   googleCloudBuild:
-    projectId: supercoder-dev
+    projectId: supercoder-cryptocurrencies
   artifacts:
-    - image: us.gcr.io/supercoder-dev/favorites
-      context: favorites
+    - image: us.gcr.io/supercoder-cryptocurrencies/cryptocurrencies
+      context: cryptocurrencies
       docker:
         dockerfile: Dockerfile

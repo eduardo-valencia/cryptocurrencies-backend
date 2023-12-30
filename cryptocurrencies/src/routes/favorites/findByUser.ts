@@ -4,8 +4,8 @@ import validateAuth from '@supercoder.dev/cryptocurrencies-common/dist/middlewar
 import { Request, Response } from 'express-serve-static-core'
 import { query } from 'express-validator'
 
-import FavoriteRepo from '../repos/Favorite'
-import { createRouter } from '../utils/router'
+import FavoriteRepo from '../../repos/Favorite'
+import { createRouter } from '../../utils/router'
 
 const router = createRouter()
 

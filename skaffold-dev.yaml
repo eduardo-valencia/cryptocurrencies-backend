@@ -9,7 +9,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: alex448800/favorites
-      context: favorites
+    - image: alex448800/cryptocurrencies
+      context: cryptocurrencies
       docker:
         dockerfile: Dockerfile

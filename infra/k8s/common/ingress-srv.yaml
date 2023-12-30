@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-srv
@@ -10,7 +10,10 @@ spec:
     - host: crypto.test-server.cloud
       http:
         paths:
-          - path: /api/favorites/?(.*)
+          - path: /?(.*)
+            pathType: ImplementationSpecific
             backend:
-              serviceName: favorites-srv
-              servicePort: 5000
+              service:
+                name: cryptocurrencies-srv
+                port:
+                  number: 5000

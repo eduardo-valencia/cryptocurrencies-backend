@@ -5,8 +5,8 @@ import { Request, Response } from 'express-serve-static-core'
 import { param } from 'express-validator'
 import { QueryResult } from 'pg'
 
-import FavoriteRepo from '../repos/Favorite'
-import { createRouter } from '../utils/router'
+import FavoriteRepo from '../../repos/Favorite'
+import { createRouter } from '../../utils/router'
 
 const router = createRouter()
 
