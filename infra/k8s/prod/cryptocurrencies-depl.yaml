@@ -41,6 +41,11 @@ spec:
                 secretKeyRef:
                   name: cryptocurrencies
                   key: DATABASE_URL
+            - name: COIN_GECKO_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: cryptocurrencies-depl
+                  key: COIN_GECKO_API_KEY
 ---
 apiVersion: v1
 kind: Service
