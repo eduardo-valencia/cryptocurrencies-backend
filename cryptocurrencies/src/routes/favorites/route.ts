@@ -1,2 +1,2 @@
 export const favoritesPath = '/favorites'
-export const route = `/api/${favoritesPath}/`
+export const route = `/api${favoritesPath}/`
