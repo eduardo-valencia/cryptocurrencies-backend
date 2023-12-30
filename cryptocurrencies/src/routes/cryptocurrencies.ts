@@ -15,7 +15,9 @@ const fetchFromCoinGecko = (req: Request): Promise<AxiosResponse> => {
 
 const handleError = (error: unknown, res: Response): void => {
   console.error(error)
-  res.status(500).send('Sorry, there was a problem. Please try again later.')
+  res
+    .status(500)
+    .json({ message: 'Sorry, there was a problem. Please try again later.' })
 }
 
 const handleRequest = async (req: Request, res: Response): Promise<void> => {
