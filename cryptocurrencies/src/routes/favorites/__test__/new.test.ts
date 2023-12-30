@@ -2,7 +2,7 @@ import request, { Test } from 'supertest'
 import { tokens } from '@supercoder.dev/cryptocurrencies-common/dist/services/__mocks__/firebase'
 
 import app from '../../../app'
-import { route } from '../../favorites/route'
+import { route } from '../route'
 
 jest.mock(
   '../../../../node_modules/@supercoder.dev/cryptocurrencies-common/dist/services/firebase'

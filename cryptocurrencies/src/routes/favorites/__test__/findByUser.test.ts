@@ -4,7 +4,7 @@ import { tokens } from '@supercoder.dev/cryptocurrencies-common/dist/services/__
 import Favorite from '@supercoder.dev/cryptocurrencies-common/dist/collections/Favorite'
 import app from '../../../app'
 import { addFavorite } from '../../../test/favorites'
-import { route } from '../../favorites/route'
+import { route } from '../route'
 import FavoriteRepo from '../../../repos/Favorite'
 
 jest.mock(
