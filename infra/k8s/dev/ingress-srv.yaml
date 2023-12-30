@@ -10,7 +10,7 @@ spec:
     - host: crypto.test-server.cloud
       http:
         paths:
-          - path: /api/cryptocurrencies/?(.*)
+          - path: /?(.*)
             pathType: ImplementationSpecific
             backend:
               service:
